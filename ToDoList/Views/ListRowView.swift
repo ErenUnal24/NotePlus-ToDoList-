@@ -25,8 +25,6 @@ struct ListRowView: View {
                 .frame(width: 1.5, height: 20)
                 .background(Color.gray)
             
-           
-            
             Button(action: {
                 navigateToEditView = true
             }, label: {
@@ -42,8 +40,6 @@ struct ListRowView: View {
                             )
                             .hidden()
                         )
-            
-
         }
         .font(.title2)
         .padding(.vertical, 8)

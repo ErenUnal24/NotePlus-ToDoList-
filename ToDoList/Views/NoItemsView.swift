@@ -16,13 +16,13 @@ struct NoItemsView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
-                Text("There are no items!")
+                Text("Listeniz Boş!")
                     .font(.title)
                     .fontWeight(.semibold)
-                Text("Are you a productive person? I think you should click the add button and add a bunch of items to your todo list!")
+                Text("Verimliliğini artırmak istiyor musun? Ekle butonuna tıkla ve yapılacaklar listeni doldurmaya başla!")
                     .padding(.bottom, 20)
                 NavigationLink(destination: AddView()) {
-                    Text("Add Something 🥳")
+                    Text("Ekle 🥳".uppercased())
                         .foregroundStyle(.white)
                         .font(.headline)
                         .frame(height: 55)
@@ -65,6 +65,6 @@ struct NoItemsView: View {
 #Preview {
     NavigationStack {
         NoItemsView()
-            .navigationTitle("Title")
+            .navigationTitle("Do Something")
     }
 }
