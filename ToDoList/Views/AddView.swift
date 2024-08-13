@@ -19,14 +19,14 @@ struct AddView: View {
     var body: some View {
         ScrollView {
             VStack {
-                TextField("Type something here...", text: $textFieldText)
+                TextField("Bir şeyler yaz...", text: $textFieldText)
                     .padding(.horizontal)
                     .frame(height: 55)
                     .background(Color(uiColor: .secondarySystemBackground))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 
                 Button(action: saveButtonPressed, label: {
-                    Text("Save".uppercased())
+                    Text("Kaydet".uppercased())
                         .foregroundStyle(.white)
                         .font(.headline)
                         .frame(height: 55)
@@ -38,7 +38,7 @@ struct AddView: View {
             }
             .padding(14)
         }
-        .navigationTitle("Add an Item 🖋️")
+        .navigationTitle("Yapılacak ekle 🖋️")
         .alert(isPresented: $showAlert) {
             getAlert()
         }
@@ -53,7 +53,7 @@ struct AddView: View {
     
     func textIsAppropriate() -> Bool {
         if textFieldText.count < 3 {
-            alertTitle = "Your new item must be at least 3 characters long! 😨"
+            alertTitle = "Yeni hedefiniz en az 3 karakter uzunluğunda olmalı! 😨"
             showAlert.toggle()
             return false
         }

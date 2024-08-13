@@ -22,4 +22,9 @@ struct ItemModel: Identifiable, Codable {
     func updateCompletion() -> ItemModel {
         return ItemModel(id: id, title: title, isCompleted: !isCompleted)
     }
+    
+    func updateTitle(newTitle: String) -> ItemModel {
+        
+        return ItemModel(id: id, title: newTitle, isCompleted: false)
+    }
 }

@@ -18,30 +18,35 @@ struct ListView: View {
                     .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
                 List {
-                    ForEach(listViewModel.items) { item in
-                        ListRowView(item: item)
-                            .onTapGesture {
-                                withAnimation(.bouncy()) {
-                                    listViewModel.updateItem(item: item)
+                        ForEach(listViewModel.items) { item in
+                            ListRowView(item: item)
+                                .onTapGesture {
+                                    withAnimation(.bouncy()) {
+                                        listViewModel.updateItem(item: item)
+                                    }
                                 }
-                            }
-                    }
-                    .onDelete(perform: listViewModel.deleteItem)
+                        }
+                        .onDelete(perform: listViewModel.deleteItem)
                     .onMove(perform: listViewModel.moveItem)
+                    
                     
                 }
                 .listStyle(PlainListStyle())
             }
         }
-        .navigationTitle("Todo List 📝")
+        .navigationTitle("Yapılacaklar 📝")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink("Add") {
+                NavigationLink("Ekle") {
                     AddView()
                 }
             }
             ToolbarItem(placement: .topBarLeading) {
-                EditButton()
+                EditButton() 
+                    
+                
+                    
+                    
             }
         }
     }

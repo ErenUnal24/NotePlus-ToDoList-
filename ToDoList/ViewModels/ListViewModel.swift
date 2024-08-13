@@ -58,6 +58,16 @@ class ListViewModel: ObservableObject {
         
     }
     
+    func updateItemTitle(item: ItemModel) {
+        
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            items[index] = item
+       }
+        
+   
+        
+    }
+    
     func saveItems() {
         if let encodedData = try? JSONEncoder().encode(items) {
             UserDefaults.standard.set(encodedData, forKey: itemsKey)
