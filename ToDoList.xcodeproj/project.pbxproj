@@ -20,7 +20,8 @@
 		7BF5D8B62C66103F0019139B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5D8B52C66103F0019139B /* ListViewModel.swift */; };
 		7BF5D8B82C6633B80019139B /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5D8B72C6633B80019139B /* NoItemsView.swift */; };
 		7BF5D8BA2C6651D70019139B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF5D8B92C6651D70019139B /* LaunchScreen.storyboard */; };
-		7BF5D8BC2C6B383A0019139B /* ItemEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5D8BB2C6B383A0019139B /* ItemEditView.swift */; };
+		7BF5D8BC2C6B383A0019139B /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5D8BB2C6B383A0019139B /* DetailsView.swift */; };
+		7BF5D8BE2C6B829C0019139B /* ItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5D8BD2C6B829C0019139B /* ItemInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,8 @@
 		7BF5D8B52C66103F0019139B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		7BF5D8B72C6633B80019139B /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 		7BF5D8B92C6651D70019139B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7BF5D8BB2C6B383A0019139B /* ItemEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditView.swift; sourceTree = "<group>"; };
+		7BF5D8BB2C6B383A0019139B /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		7BF5D8BD2C6B829C0019139B /* ItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +153,8 @@
 				7BF5D8AB2C65FB010019139B /* ListRowView.swift */,
 				7BF5D8AF2C6601000019139B /* AddView.swift */,
 				7BF5D8B72C6633B80019139B /* NoItemsView.swift */,
-				7BF5D8BB2C6B383A0019139B /* ItemEditView.swift */,
+				7BF5D8BB2C6B383A0019139B /* DetailsView.swift */,
+				7BF5D8BD2C6B829C0019139B /* ItemInfo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,8 +310,9 @@
 				7BF5D8B02C6601000019139B /* AddView.swift in Sources */,
 				7BF5D8B62C66103F0019139B /* ListViewModel.swift in Sources */,
 				7BF5D87F2C65F89B0019139B /* ToDoListApp.swift in Sources */,
+				7BF5D8BE2C6B829C0019139B /* ItemInfo.swift in Sources */,
 				7BF5D8AA2C65F9520019139B /* ListView.swift in Sources */,
-				7BF5D8BC2C6B383A0019139B /* ItemEditView.swift in Sources */,
+				7BF5D8BC2C6B383A0019139B /* DetailsView.swift in Sources */,
 				7BF5D8B82C6633B80019139B /* NoItemsView.swift in Sources */,
 				7BF5D8AC2C65FB010019139B /* ListRowView.swift in Sources */,
 			);

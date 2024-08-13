@@ -12,42 +12,60 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
-        ZStack {
-            if listViewModel.items.isEmpty {
-                NoItemsView()
-                    .transition(AnyTransition.opacity.animation(.easeIn))
-            } else {
-                List {
-                        ForEach(listViewModel.items) { item in
-                            ListRowView(item: item)
-                                .onTapGesture {
-                                    withAnimation(.bouncy()) {
-                                        listViewModel.updateItem(item: item)
+         
+            ScrollView {
+                if listViewModel.items.isEmpty {
+                    NoItemsView()
+                        .transition(AnyTransition.opacity.animation(.easeIn))
+                } else {
+                    //ScrollView {
+                        Section("Bugün") {
+                             //   List {
+                                    ForEach(listViewModel.items) { item in
+                                        ListRowView(item: item)
+                                            .onTapGesture {
+                                                withAnimation(.bouncy()) {
+                                                    listViewModel.updateItem(item: item)
+                                                }
+                                            }
                                     }
+                                    .onDelete(perform: listViewModel.deleteItem)
+                                    .onMove(perform: listViewModel.moveItem)
+                              //  }
+                            //    .listStyle(InsetGroupedListStyle())
+                            }
+                            
+                            Section("Dün") {
+                                List {
+                                    
+                                    ForEach(listViewModel.items) { item in
+                                        ListRowView(item: item)
+                                            .onTapGesture {
+                                                withAnimation(.bouncy()) {
+                                                    listViewModel.updateItem(item: item)
+                                                }
+                                            }
+                                    }
+                                    .onDelete(perform: listViewModel.deleteItem)
+                                    .onMove(perform: listViewModel.moveItem)
                                 }
-                        }
-                        .onDelete(perform: listViewModel.deleteItem)
-                    .onMove(perform: listViewModel.moveItem)
-                    
-                    
+                                .listStyle(InsetGroupedListStyle())
+                            }
+                    }
+              //  }
+            }
+            .navigationTitle("Yapılacaklar 📝")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink("Ekle") {
+                        AddView()
+                    }
                 }
-                .listStyle(PlainListStyle())
-            }
-        }
-        .navigationTitle("Yapılacaklar 📝")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink("Ekle") {
-                    AddView()
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton() 
+            
                 }
-            }
-            ToolbarItem(placement: .topBarLeading) {
-                EditButton() 
-                    
-                
-                    
-                    
-            }
+        
         }
     }
    
@@ -57,8 +75,9 @@ struct ListView: View {
 #Preview {
     NavigationStack {
         ListView()
+            .environmentObject(ListViewModel())
+
     }
-    .environmentObject(ListViewModel())
 }
 
 

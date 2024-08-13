@@ -26,7 +26,7 @@ struct ListRowView: View {
                 .background(Color.gray)
             
             Button(action: {
-                navigateToEditView = true
+                navigateToEditView.toggle()
             }, label: {
                 Image(systemName: "pencil.tip.crop.circle.badge.plus.fill")
                     .foregroundStyle(.green)
@@ -34,7 +34,8 @@ struct ListRowView: View {
             })
             .background(
                             NavigationLink(
-                                destination: ItemEditView(item: item),  // Düzenlenecek öğeyi gönderiyoruz
+                                destination: DetailsView(item: item)
+                                    .transition(AnyTransition.opacity.animation(.smooth)),  // Düzenlenecek öğeyi gönderiyoruz
                                 isActive: $navigateToEditView,
                                 label: { EmptyView() }
                             )
@@ -47,10 +48,18 @@ struct ListRowView: View {
 }
 
 
+//#Preview {
+//  Group {
+//      ListRowView(item: ItemModel(title: "This is the first item", isCompleted: false, dateCreated: .now, dateUpdated: .now))
+//    ListRowView(item: ItemModel(title: "This is the second item", isCompleted: true))
+//  }
+//  .previewLayout(.sizeThatFits)
+//}
+
 #Preview {
-  Group {
-    ListRowView(item: ItemModel(title: "This is the first item", isCompleted: false))
-    ListRowView(item: ItemModel(title: "This is the second item", isCompleted: true))
-  }
-  .previewLayout(.sizeThatFits)
+    Group {
+        ListRowView(item: ItemModel(title: "This is the first item", isCompleted: false, dateCreated: .now, dateUpdated: .now))
+        ListRowView(item: ItemModel(title: "This is the second item", isCompleted: true, dateCreated: .now, dateUpdated: .now))
+    }
+    .previewLayout(.sizeThatFits)
 }
